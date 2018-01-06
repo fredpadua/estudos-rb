@@ -12,11 +12,7 @@ class Person
   end
 
   def adult?
-    if age >= 18
-      true
-    else
-      false
-    end
+    age >= 18 ? true : false
   end
 
   def get_full_address
@@ -25,4 +21,4 @@ class Person
 end
 
 person = Person.new('Fred', 21, 28051290)
-puts "#{person.name} tem #{person.age} anos e mora em #{person.address.street}, #{person.address.neighborhood} - #{person.address.state}"
+puts "#{person.name} tem #{person.age} anos (#{person.adult? ? 'é maior de idade' : 'é menor de idade'}) e mora em #{person.address.street}, #{person.address.neighborhood} - #{person.address.state}"
